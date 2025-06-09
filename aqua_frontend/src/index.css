@@ -1,0 +1,26 @@
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'D\\-=--roid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+:root {
+  /* Aqua Ledger Brand Colors */
+  --color-light-blue:  #5CCCF5;  /* Light Blue */
+  --color-deep-blue:   #3E62AD;  /* Deep Blue */
+  --color-charcoal:    #231F20;  /* Charcoal (dark) */
+  
+  /* Optional: Override Bootstrap theme colors */
+  --bs-primary:   #3E62AD;              /* use deep blue as primary color */
+  --bs-primary-rgb: 62, 98, 173;       /* RGB for focus effects */
+  --bs-secondary: #5CCCF5;            /* light blue as secondary, if desired */
+  /* --bs-success, --bs-info, etc., can be set if using those in your app */
+}

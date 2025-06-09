@@ -1,0 +1,94 @@
+/* =============== Aqua Ledger theme overrides =============== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+:root {
+  /* Brand palette */
+  --color-light-blue:  #5CCCF5;
+  --color-deep-blue:   #3E62AD;
+  --color-charcoal:    #231F20;
+
+  /* Tell Bootstrap to use our primary colour */
+  --bs-primary:       var(--color-deep-blue);
+  --bs-primary-rgb:   62,98,173;        /* R,G,B of deep blue */
+  --bs-secondary:     var(--color-light-blue);
+}
+
+body  { font-family: 'Poppins', sans-serif; color: var(--color-charcoal); }
+
+/* Input focus glow ⤵︎ */
+.form-control:focus{
+  border-color: var(--color-light-blue) !important;
+  box-shadow: 0 0 0 .2rem rgba(92,204,245,.25) !important;  /* :contentReference[oaicite:2]{index=2}*/
+}
+
+/* Button hover transition */
+.btn-primary      { transition: filter .2s ease-in-out; }
+.btn-primary:hover{ filter: brightness(1.1); }
+.btn-primary:active{filter: brightness(.9);}
+
+/* Fade-in on mount */
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px);}
+                  to  {opacity:1;transform:translateY(0);} }
+.fade-in{animation:fadeIn .5s ease-in-out;}   /* :contentReference[oaicite:3]{index=3}*/
+
+/* ==== Sidebar base ==== */
+.sidebar {
+  width: 220px;                       /* fixed width */
+  min-height: 100vh;                  /* full height */
+  background: #fff;                   /* white card feel */
+  border-right: 1px solid #e5e5e5;    /* subtle separator */
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: auto;                   /* scroll when needed */
+  padding-top: 4rem;                  /* space below logo */
+}
+
+/* nav link style */
+.sidebar a.nav-link {
+  color: var(--color-charcoal);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  padding: .75rem 1.25rem;
+  transition: background-color .15s ease-in-out;
+}
+
+/* default icon colour */
+.sidebar a.nav-link i {
+  font-size: 1.25rem;
+  color: var(--bs-primary);           /* brand blue outline */
+}
+
+/* hover */
+.sidebar a.nav-link:hover {
+  background: rgba(62, 98, 173, .08); /* faint blue */
+  text-decoration: none;
+}
+
+/* active link (NavLink gives 'active' class) */
+.sidebar a.nav-link.active {
+  background: rgba(62, 98, 173, .15); /* stronger blue */
+  font-weight: 700;                   /* bold text */
+}
+.sidebar a.nav-link.active i {
+  /* swap to filled icon colour */
+  color: #fff;                        /* white glyph on blue bg */
+}
+/* === Validation colours (orange / green) ====================== */
+.form-control.is-valid  { border-color:#2A9D8F;   }
+.form-control.is-invalid{ border-color:#FF9F40;   }
+.form-control.is-valid:focus   {
+  box-shadow:0 0 0 .2rem rgba(42,157,143,.25);
+}
+.form-control.is-invalid:focus {
+  box-shadow:0 0 0 .2rem rgba(255,159,64,.25);
+}
+
+/* Toast position (top-right inside content area) */
+.toast-container{
+  position:fixed; top:1rem; right:1rem; z-index:1055;
+}
+.table-actions .btn { padding: .15rem .5rem; font-size: .8rem; }
+.profile-card { max-width: 480px; }
